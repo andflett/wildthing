@@ -40,8 +40,9 @@
 		<% @projects.each do |project| %>
 		<li>
 			<% unless project.image.url.nil? %>
-				<%= image_tag project.image.thumbnail %>
+				<%#= image_tag project.image.thumbnail %>
 			<% end %>
+			<%= image_tag "placeholder_thumbnail.gif" %>
 			<h3><%= link_to project.title, project_path(project) %></h3>
 		</li>
 		<% end %>
