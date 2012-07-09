@@ -170,6 +170,7 @@ DEPENDENCIES
   activeadmin
   carrierwave
   country-select
+  devise
   feedzirra
   friendly_id (~> 4.0.1)
   jquery-rails

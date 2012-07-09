@@ -5,6 +5,7 @@ gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'simple_form'
 
+gem 'devise'
 gem 'feedzirra'
 gem 'carrierwave'
 gem 'mini_magick','~> 3.3'
