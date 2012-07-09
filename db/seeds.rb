@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+categories = Category.create([
+  { title: 'Hi-Tech Nature' }, 
+  { title: 'Low-fi' }
+])
+
+AdminUser.create([
+  {
+    email: 'hello@goodfornothing.com',
+    password: 'p1pel1ne',
+    password_confirmation: 'p1pel1ne',
+  }
+])

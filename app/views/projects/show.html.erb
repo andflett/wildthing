@@ -1,0 +1,22 @@
+<h1><%= @project.title %></h1>
+
+<div>
+
+	<section class="panel">
+		<h2>About</h2>
+		
+		<% unless @project.image.url.nil? %>
+			<%= image_tag @project.image.thumbnail %>
+		<% end %>
+		
+		<p><strong>Created by:</strong> <%= @project.created_by %></p>
+		<p><strong>Website:</strong> <%= link_to @project.url %>
+		<%= simple_format @project.description %>
+	</section>
+	
+	<section class="panel">
+		<h2>Get involved</h2>
+		<%= simple_format @project.how_to_get_involved %>
+	</section>
+	
+</div>

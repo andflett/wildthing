@@ -9,15 +9,43 @@
 		<%= stylesheet_link_tag    "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
-		
-		<meta name="robots" content="noindex,nofollow" />
-		
+			
 	</head>
 	<body class="<%= "section_#{params[:controller]} view_#{params[:action]}"%>">
+	
+		<% unless params[:action] == "teaser" %>
+	
+		<header class="container">
+			
+			<% if params[:controller] == "home" && params[:action] == "index" %>
+				<h1 class="branding ir">Wild Thing<span></span></h1>
+			<% else %>
+				<p class="branding"><a href="/index" class="ir">Wild Thing <span></span></a></p>
+			<% end %>
+			
+			<nav id="primary_navigation">
+				<ul>
+					<li><%= link_to "Concepts", concepts_path, :class => ("active" if params[:controller]=="concepts") %></li>
+					<li><%= link_to "Projects", projects_path, :class => ("active" if params[:controller]=="projects") %></li>
+					<li><%= link_to "Back us", backing_path, :class => ("active" if params[:action]=="backing") %></li>
+				</ul>
+			</nav>
+			
+		</header>
+		
+		<% end %>
 	
 		<div class="container" id="main" role="main">
 			<%= yield %>
 		</div>
+		
+		<% unless params[:action] == "teaser" %>
+		
+		<footer class="container">
+			<p>Made possible by the <%= link_to "founding partners", backing_path %> of Wild Thing</p>
+		</footer>
+		
+		<% end %>
 	
 	</body>
 </html>

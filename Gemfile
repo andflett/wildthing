@@ -3,10 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 
 gem 'mysql2'
-#gem 'devise'
 gem 'simple_form'
 
-#gem 'devise_mailchimp'
 gem 'feedzirra'
 gem 'carrierwave'
 gem 'mini_magick','~> 3.3'
@@ -17,12 +15,10 @@ gem 'jquery-rails'
 gem 'country-select'
 
 gem 'activeadmin'
-gem 'formtastic', '~> 2.1.1'
 gem 'meta_search', '>= 1.1.0.pre' 
 gem 'sass-rails'
 
 gem 'friendly_id', '~> 4.0.1'
-gem "fog", "~> 1.3.1"
 
 # For Heroku
 gem 'pg'
