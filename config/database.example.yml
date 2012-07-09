@@ -8,12 +8,12 @@ defaults: &defaults
 
 development: &DEV
   <<: *defaults
-  database: makegoodhappen_development
+  database: wildthing_development
 
 test: &TEST
   <<: *defaults
-  database: makegoodhappen_test
+  database: wildthing_test
 
 production:
   <<: *defaults
-  database: makegoodhappen_production
+  database: wildthing_production

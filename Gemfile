@@ -3,10 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 
 gem 'mysql2'
-gem 'devise'
+#gem 'devise'
 gem 'simple_form'
 
-gem 'devise_mailchimp'
+#gem 'devise_mailchimp'
 gem 'feedzirra'
 gem 'carrierwave'
 gem 'mini_magick','~> 3.3'
