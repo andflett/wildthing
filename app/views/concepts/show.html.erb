@@ -1,3 +1,44 @@
-<section>
-	<h1>A concept...</h1>
+<div class="intro_panel">
+	
+	<section class="introduction">
+		<h1><%= @concept.title %></h1>
+		<%= simple_format @concept.description %>
+		
+	</section>
+	
+	<p class="cta"><%= link_to "Get involved" %></p><!-- tweet involvement -->
+	
+</div>
+
+<section class="primary_content">
+	
+	<h2>The idea</h2>
+	
+	<%= simple_format @concept.idea %>
+	
+	<p><strong style="font-size: 16px;">Read more about this idea in the <a href="">pitch presentation</a></strong></p>
+
+	<h2>The project so far</h2>
+	
+	<ul>
+		<li>Prototype: <a href="">Somewhere</a></li>
+		<li>Source code: <a href="">http://www.github.com/hithere</a></li>
+	</ul>	
+
+</section>
+
+<aside class="secondary_content">
+	
+	<h2>Supporting: 32</h2>
+	
+	<p><a href="http://twitter.com/?text=Interesting... #concepttitle">Tweet your support</a></p>
+	
+	<h2>Involved: 6</h2>
+	
+	<p>[grid of twitter avatars or something]</p>
+	
+	<p>Discuss this concept <a href="http://twitter.com/?text=Interesting... #concepttitle">on Twitter</a></p>
+	
+
+	
 </section>

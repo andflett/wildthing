@@ -25,9 +25,9 @@
 			
 			<nav id="primary_navigation">
 				<ul>
-					<li><%= link_to "Concepts", concepts_path, :class => ("active" if params[:controller]=="concepts") %></li>
-					<li><%= link_to "Projects", projects_path, :class => ("active" if params[:controller]=="projects") %></li>
-					<li><%= link_to "Back us", backing_path, :class => ("active" if params[:action]=="backing") %></li>
+					<li><%= link_to "Concepts", concepts_path, :class => ("active" if params[:controller]=="concepts") %> <span>(20)</span></li>
+					<li><%= link_to "Projects", projects_path, :class => ("active" if params[:controller]=="projects") %> <span>(1)</span></li>
+					<li><%= link_to "Backers", backing_path, :class => ("active" if params[:action]=="backing") %> <span>(6)</span></li>
 				</ul>
 			</nav>
 			
@@ -42,7 +42,7 @@
 		<% unless params[:action] == "teaser" %>
 		
 		<footer class="container">
-			<p>Brought to you by the Wild Thing <%= link_to "founding partners", backing_path %></p>
+			<p>Brought to you by the Wild Thing <%= link_to "founding partners", backing_path %> and the <%= link_to "Good for Nothing", "http://goodfornoth.ning.com/" %> community</p>
 		</footer>
 		
 		<% end %>

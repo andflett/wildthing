@@ -15,7 +15,6 @@ ActiveAdmin.register Project do
     attributes_table do
       row :title
       row :url
-      row :category
       row :created_by
       row :description
       row :how_to_get_involved
@@ -26,7 +25,8 @@ ActiveAdmin.register Project do
     f.inputs "Details" do
       f.input :title
       f.input :url
-      f.input :category
+      f.input :source_code
+      f.input :toolkit
       f.input :created_by
       f.input :image
       f.input :description

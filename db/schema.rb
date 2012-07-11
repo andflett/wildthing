@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709153428) do
+ActiveRecord::Schema.define(:version => 20120711113821) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,29 +52,42 @@ ActiveRecord::Schema.define(:version => 20120709153428) do
   end
 
   create_table "concepts", :force => true do |t|
-    t.string "title"
-    t.text   "description"
-    t.string "created_by"
-    t.string "slug"
-    t.string "image"
+    t.string   "title"
+    t.text     "description"
+    t.string   "created_by"
+    t.string   "slug"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "source_code"
+    t.text     "todo"
+    t.string   "presentation"
+    t.string   "prototype"
+    t.text     "idea"
   end
 
   create_table "inspirations", :force => true do |t|
-    t.string  "name"
-    t.integer "age"
-    t.string  "idea"
-    t.string  "slug"
+    t.string   "name"
+    t.integer  "age"
+    t.string   "idea"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "projects", :force => true do |t|
-    t.string  "title"
-    t.text    "description"
-    t.text    "how_to_get_involved"
-    t.string  "created_by"
-    t.string  "url"
-    t.integer "category_id"
-    t.string  "slug"
-    t.string  "image"
+    t.string   "title"
+    t.text     "description"
+    t.text     "how_to_get_involved"
+    t.string   "created_by"
+    t.string   "url"
+    t.integer  "category_id"
+    t.string   "slug"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "source_code"
+    t.string   "toolkit"
   end
 
 end

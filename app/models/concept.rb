@@ -1,6 +1,6 @@
 class Concept < ActiveRecord::Base
 
-	attr_accessible :title, :description, :created_by, :image
+	attr_accessible :title, :description, :created_by, :image, :todo, :source_code, :presentation, :prototype, :idea
 	
 	validates_presence_of :title, :description
 	
@@ -8,5 +8,9 @@ class Concept < ActiveRecord::Base
 	
 	extend FriendlyId
   friendly_id :title, use: :slugged
+
+  def hashtag
+    "##{self.title.gsub(' ','').lowercase}"
+  end
 
 end

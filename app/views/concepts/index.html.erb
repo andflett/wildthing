@@ -1,6 +1,18 @@
-<section>
+<div class="intro_panel">
 	<h1>Concepts</h1>
-	
-	<p>[grid or something]</p>
-	
-</section>
+	<p>Conceptual projects from the community; vote for your favourite, get inspired, bring them to life.</p>
+</div>
+
+<% if @concepts.any? %>
+<ul class="grid_list">
+	<% @concepts.each do |concept| %>
+	<li>
+		<h3><%= link_to concept.title, concept_path(concept) %></h3>
+		
+		<% unless concept.image.url.nil? %>
+			<%= link_to (image_tag concept.image.thumbnail), concept_path(concept) %>
+		<% end %>
+	</li>
+	<% end %>
+</ul>
+<% end %>

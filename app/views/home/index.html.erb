@@ -1,5 +1,5 @@
 <section class="panel">
-	<h2><span>A platform to reconnect kids with wildness. Get involved: Find a project. Build on a concept. Go Wild!</span></h2>
+	<h2><span>A platform to reconnect kids with wildness</span> Work on a concept / Cast your vote / Go Wild!</h2>
 	<%= image_tag "nature.gif", :alt => "Wild Thing" %>
 </section>
 
@@ -9,56 +9,31 @@
 </section>
 
 <section class="panel">
-	<h2>Concepts</h2>
-	<p>Conceptual projects from the community - get inspired, bring them to life.</p>
+	<h2>Most popular concepts</h2>
+	<p>Vote for your favourite, get inspired, bring them to life.</p>
+	<% if @concepts.any? %>
 	<ul class="grid_list">
+		<% @concepts.each do |concept| %>
 		<li>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to "Another concept title" %></h3>
+			<h3><%= link_to concept.title, concept_path(concept) %></h3>
+			<% unless concept.image.url.nil? %>
+				<%= link_to (image_tag concept.image.thumbnail), concept_path(concept) %>
+			<% end %>
 		</li>
-		<li>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to "Another concept title" %></h3>
-		</li>
-		<li>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to "Another concept title" %></h3>
-		</li>
-		<li>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to "Another concept title" %></h3>
-		</li>
+		<% end %>
 	</ul>
+	<% end %>
 </section>
 
 <section class="panel">
-	<h2>Projects</h2>
-	<p>Ways you can start getting connected with nature today.</p>
 	
-	<% if @projects.any? %>
-	<ul class="grid_list">
-		<% @projects.each do |project| %>
-		<li>
-			<% unless project.image.url.nil? %>
-				<%#= image_tag project.image.thumbnail %>
-			<% end %>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to project.title, project_path(project) %></h3>
-		</li>
+	<h2>Latest Live Project</h2>
+	<h3><%= link_to @project.title, project_path(@project) %> <span>by Dan Burgess, Loz Ives and Andrew Sprinz</span></h3>
+	
+	<% if @project %>
+		<% unless @project.image.url.nil? %>
+			<%= link_to (image_tag @project.image.thumbnail), project_path(@project) %>
 		<% end %>
-		<li>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to "Another project title" %></h3>
-		</li>
-		<li>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to "Another project title" %></h3>
-		</li>
-		<li>
-			<%= image_tag "placeholder_thumbnail.gif" %>
-			<h3><%= link_to "Another project title" %></h3>
-		</li>
-	</ul>
 	<% end %>
 	
 </section>

@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-	attr_accessible :title, :description, :created_by, :how_to_get_involved, :image, :url, :category_id
+	attr_accessible :title, :description, :created_by, :how_to_get_involved, :image, :url, :category_id, :toolkit, :source_code
 	
 	belongs_to :category
 	

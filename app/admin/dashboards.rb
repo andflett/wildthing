@@ -7,10 +7,10 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  section "Recent Inspirations" do
+  section "Recent Concepts" do
     ul do
-      Inspiration.limit(5).collect do |inspiration|
-        li link_to(inspiration.name, admin_inspiration_path(inspiration))
+      Concept.limit(5).collect do |concept|
+        li link_to(concept.name, admin_concept_path(concept))
       end
     end
   end

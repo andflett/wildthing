@@ -47,13 +47,13 @@
 
 	.grid_list li {
 		padding: 0;
-		width: 227px;
+		width: 300px;
 		float: left;
-		margin: 0 10px 30px 0;
+		margin: 0 30px 30px 0;
 		list-style-type: none;
 	}
 	
-	.grid_list li:nth-child(2n+2) {
+	.grid_list li:nth-child(3n+3) {
 		margin-right: 0;
 	}
 	
@@ -63,7 +63,26 @@
 	
 	.grid_list li img {
 		display: block;
-		margin-bottom: 10px;
+		margin-top: 10px;
+		width: 300px;
+		height: 200px;
+	}
+	
+	.panel .grid_list li {
+		width: 227px;
+		margin-right: 10px;
+	}
+	
+	.panel .grid_list li img {
+		width: auto; height: auto;
+	}
+	
+	.panel .grid_list li:nth-child(2n+2) {
+		margin: 0;
+	}
+	
+	.panel .grid_list li:nth-child(3n+3) {
+		margin: 10px;
 	}
 
 /* =teaser */
