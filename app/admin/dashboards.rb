@@ -10,7 +10,7 @@ ActiveAdmin::Dashboards.build do
   section "Recent Concepts" do
     ul do
       Concept.limit(5).collect do |concept|
-        li link_to(concept.name, admin_concept_path(concept))
+        li link_to(concept.title, admin_concept_path(concept))
       end
     end
   end
