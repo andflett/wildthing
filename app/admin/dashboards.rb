@@ -7,13 +7,13 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  section "Recent Concepts" do
-    ul do
-      Concept.limit(5).collect do |concept|
-        li link_to(concept.title, admin_concept_path(concept))
-      end
-    end
-  end
+  #section "Recent Concepts" do
+  #  ul do
+  #    Concept.limit(5).collect do |concept|
+  #      li link_to(concept.title, admin_concept_path(concept))
+  #    end
+  #  end
+  #end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can

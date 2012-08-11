@@ -4,10 +4,9 @@ Wildthing::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-	resources :projects, :only => [:show, :index]
-	resources :concepts, :only => [:show, :index]	
+	resources :projects, :only => [:show]
+	resources :inspirations
 
-  match "backing" => "home#backing"
   match "index" => "home#index"
   
   root :to => "home#teaser"

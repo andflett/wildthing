@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @concepts = Concept.limit(2)
-    @project = Project.order('created_at DESC').limit(1).first
+    @project = Project.order('created_at DESC').limit(10)
   end
 
 	def teaser
