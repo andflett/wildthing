@@ -1,0 +1,14 @@
+<%= simple_form_for [@idea] do |f| %>
+  
+	<%= field_set_tag do %>
+		<%= f.input :name, :label => "Your name", :input_html => { :class => "required" } %>
+		<%= f.input :title %>
+		<%= f.input :idea %>
+		<%= f.input :twitter_handle, :label => "Your Twitter handle" %>
+	<% end %>
+
+	<%= field_set_tag do %>
+		<%= f.submit :value => "Share idea" %>
+	<% end %>
+  
+<% end %>

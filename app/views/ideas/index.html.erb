@@ -1,0 +1,5 @@
+<% if @ideas.any? %>
+	<% @ideas.each do |idea| %>
+		<%= render "block", :idea => idea %>
+	<% end %>
+<% end %>

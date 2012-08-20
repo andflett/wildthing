@@ -7,13 +7,27 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  #section "Recent Concepts" do
-  #  ul do
-  #    Concept.limit(5).collect do |concept|
-  #      li link_to(concept.title, admin_concept_path(concept))
-  #    end
-  #  end
-  #end
+  section "Unpublished Ideas" do
+    
+    @ideas = Idea.unpublished
+    
+    if @ideas.any?
+    
+      table_for @ideas do |t|
+          t.column :title
+          t.column :name
+          t.column "Publish" do |idea|
+            if idea.published?
+              "Published"
+            else
+              link_to "Publish", publish_admin_idea_path(idea)
+            end
+          end
+      end
+      
+    end
+    
+  end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can

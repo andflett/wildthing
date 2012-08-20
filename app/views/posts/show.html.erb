@@ -1,0 +1,8 @@
+<% if @post %>
+	<h2><%= @post.title %></h2>
+	<% unless @post.image.url.nil? %>
+		<%= image_tag @post.image.panel %>
+	<% end %>
+	<%= @post.created_at %>
+	<%= markdown.render(@post.body).html_safe %>
+<% end %>

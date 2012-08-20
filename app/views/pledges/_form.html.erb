@@ -1,0 +1,14 @@
+<%= simple_form_for [@pledge] do |f| %>
+  
+	<%= field_set_tag do %>
+		<%= f.input :name, :label => "Your name", :input_html => { :class => "required" } %>
+		<%= f.input :email %>
+		<%= f.input :twitter %>
+		<%= f.input :facebook %>
+	<% end %>
+
+	<%= field_set_tag do %>
+		<%= f.submit :value => "Pledge" %>
+	<% end %>
+  
+<% end %>

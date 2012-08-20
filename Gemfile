@@ -21,7 +21,7 @@ gem 'sass-rails'
 
 gem 'friendly_id', '~> 4.0.1'
 
-gem "curatr", :path => "/Users/andrewsprinz/Sites/curatr"
+#gem "curatr", :path => "/Users/andrewsprinz/Sites/curatr"
 
 # For Heroku
 gem 'pg'

@@ -1,14 +1,29 @@
+<nav id="navigation">
+	<ul>
+		<li><%= link_to "Projects", "#{index_path}#projects" %> <span>(<%= Project.count %>)</span></li>
+		<li><%= link_to "Ideas", "#{index_path}#ideas" %> <span>(<%= Idea.published.count %>)</span></li>
+	</ul>
+</nav>
+
 <section class="panel">
-	<h2><span>A platform to reconnect kids with wildness</span> Work on a concept / Show your support / Go Wild!</h2>
-	<%= image_tag "nature.gif", :alt => "Wild Thing" %>
+	<h2><span>Manifesto</span> Why we're doing it</h2>
+	<p>Stuff</p>
+	<p class="cta"><%= link_to "More...", background_path %></p>
 </section>
 
 <section class="panel">
-	<h2><span>The Campaign</span>Inspirations from the Wild</h2>
+	<%#= hardcoded @inspiration %>
+	<h2><span>Introducing</span>The Nature Film</h2>
 	<iframe src="http://player.vimeo.com/video/44097760?byline=0&amp;color=aecf1b" width="465" height="260" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </section>
 
-<section class="panel" id="projects">
+<section id="pledges">
+	<h2>Pledges</h2>
+	<%= @pledge_count %>
+	<%= link_to "Pledge now", new_pledge_path %>
+</section>
+
+<section id="projects">
 	
 	<h2>Projects</h2>
 	<% if @projects.any? %>
@@ -16,12 +31,29 @@
 		<% @projects.each do |project| %>
 		<li>
 			<h3><%= link_to project.title, project_path(project) %></h3>
-			<% unless project.image.url.nil? %>
-				<%= link_to (image_tag project.image.thumbnail), project_path(project) %>
-			<% end %>
 		</li>
 		<% end %>
 	</ul>
 	<% end %>
 	
+</section>
+
+<section id="ideas">
+	
+	<h2>Ideas</h2>
+	<% if @ideas.any? %>
+		<% @ideas.each do |idea| %>
+			<%= render "ideas/block", :idea => idea %>
+		<% end %>
+	<% end %>
+	
+	<p class="cta"><%= link_to "More ideas", ideas_path %></p>
+	
+	<%= render "ideas/form" %>
+	
+</section>
+
+<section id="blog">
+	<%= render "posts/block", :post => @post %>
+	<p class="cta"><%= link_to "More updates", posts_path %></p>
 </section>

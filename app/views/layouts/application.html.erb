@@ -25,25 +25,19 @@
 			
 			<p class="tagline">Reconnecting kids with nature</p>
 			
-			<nav id="primary_navigation">
-				<ul>
-					<li><%= link_to "Projects", "#{index_path}#projects", :class => ("active" if params[:controller]=="projects") %> <span>(1)</span></li>
-					<li><%= link_to "Inspiration", "#{index_path}#inspiration", :class => ("active" if params[:controller]=="inspiration") %> <span>(20)</span></li>
-				</ul>
-			</nav>
-			
 		</header>
 		
 		<% end %>
 	
 		<div class="container" id="main" role="main">
+			<%= flash[:notice] %>
 			<%= yield %>
 		</div>
 		
 		<% unless params[:action] == "teaser" %>
 		
 		<footer class="container">
-			<p>Brought to you by the Wild Thing <%= link_to "founding partners", backing_path %> and the <%= link_to "Good for Nothing", "http://goodfornoth.ning.com/" %> community</p>
+			<p>Brought to you by the Wild Thing <%= link_to "founding partners", partners_path %> and the <%= link_to "Good for Nothing", "http://goodfornoth.ning.com/" %> community</p>
 		</footer>
 		
 		<% end %>

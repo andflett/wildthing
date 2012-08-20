@@ -1,6 +1,6 @@
 class Inspiration < ActiveRecord::Base
 
-	attr_accessible :name, :idea
-	validates_presence_of :name, :idea
+	attr_accessible :vimeo_id
+	validates_presence_of :vimeo_id
 
 end
