@@ -1,5 +1,6 @@
 /*
-	White: f4f1ee
+	White: ffffff
+	Black: 1a1a1a
 	Green: cad400
 	Dark Green: 576027
 */
@@ -7,7 +8,7 @@
 @media all {
 
 	body { 
-		background-color: #f4f1ee;
+		background: #000000;
 	}
    
 	.container {
@@ -18,104 +19,68 @@
 	/* =header */
 	
 		header {
-			padding: 35px 0 40px;
+			background-color: #ffffff;
+			background-image: url("layout/header.png"),
+												url("layout/page_background.gif");
+			background-repeat: repeat-x, no-repeat;
+			background-position: center 232px, center top;
+			padding-top: 276px;
+		}
+		
+		header .introduction {
+			background: #1a1a1a url(<%= asset_path "layout/secret_stash.gif" %>) no-repeat center top;		
+		}
+		
+		header .container {	
+			color: #ffffff;
+			overflow: visible;
+			padding: 0;
+			position: relative;
+			padding: 90px 0 28px;
 		}
 		
 		header .branding {
-			width: 325px;
+			width: 256px;
 			margin: 0 auto;
+			position: absolute;
+			top: -40px;
+			left: 353px;
 		}
 	
 		header .ir {
-			width: 325px;
-			height: 101px;
-			padding: 0;
+			width: 256px;
+			height: 153px;
+			padding: 20px 0 0;
 		}
 	
 		header .branding span {
-			background: url(<%= asset_path "branding/wild_thing_logo.gif" %>);
-		}
-		
-		header nav {
-			padding-top: 5px;
-			margin: 0 auto;
-			text-align: center;
-		}
-		
-		header nav ul {
-			padding: 0;
-			list-style-type: none;
-		}
-		
-		header nav li {
-			display: inline-block;
-			font-size: 28px;
-			margin-left: 20px;
-			line-height: 30px;
-			text-transform: uppercase;
-			font-family: ParisBlack;
-		}
-		
-		header nav li span {
-			display: block;
-			font-size: 20px;
-			color: #CAD400;
-		}
-		
-		header nav li a {
-			color: #576027;
-			text-decoration: none;
-		}
-		
-		header nav li a:hover,
-		header nav li a:active,
-		header nav li a:focus,
-		header nav li a.active {
-			color: #cad400;
-			text-decoration: none;
+			background: url("branding/wild_thing_logo.gif") no-repeat;
 		}
 		
 	/* =main */
 	
-	#main .intro_panel {
-		width: 100%;
-		overflow: hidden;
-		margin-bottom: 20px;
-	}
-	
-	#main .intro_panel .introduction {
-		width: 600px;
-		float: left;
-	}
-	
-	#main .intro_panel .cta a {
-		width: 200px;
-		float: right;
-		background: #576027;
-		margin-top: 50px;
-		padding: 20px;
-	}
-	
-	#main .primary_content {
-		border-top: 1px solid #576027;
-		padding-top: 15px;
-		width: 600px;
-		float: left;
-	}
-	
-	#main .secondary_content {
-		border-top: 1px solid #576027;
-		padding-top: 15px;
-		width: 300px;
-		float: right;
-	}
+		#main {
+			padding: 60px 0 350px;
+			background-color: #ffffff;
+			background-image: url(<%= asset_path "layout/footer.gif" %>),
+												url("layout/main.gif");
+			background-position: center bottom, center top;
+			background-repeat: no-repeat, repeat-x;
+		}
+		
+		#main p {
+			-webkit-font-smoothing: antialiased; 
+		}
 		
 	/* =footer */
 	
 		footer {
-			padding: 10px 0 30px;
-			background: #000000;
 			color: #ffffff;
+			padding: 60px 0 30px;
+		}
+		
+		footer p {
+			margin: 0;
 		}
 
 }

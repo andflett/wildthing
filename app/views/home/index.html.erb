@@ -1,36 +1,18 @@
-<nav id="navigation">
-	<ul>
-		<li><%= link_to "Projects", "#{index_path}#projects" %> <span>(<%= Project.count %>)</span></li>
-		<li><%= link_to "Ideas", "#{index_path}#ideas" %> <span>(<%= Idea.published.count %>)</span></li>
-	</ul>
-</nav>
-
-<section class="panel">
-	<h2><span>Manifesto</span> Why we're doing it</h2>
-	<p>Stuff</p>
-	<p class="cta"><%= link_to "More...", background_path %></p>
-</section>
-
-<section class="panel">
-	<%#= hardcoded @inspiration %>
-	<h2><span>Introducing</span>The Nature Film</h2>
-	<iframe src="http://player.vimeo.com/video/44097760?byline=0&amp;color=aecf1b" width="465" height="260" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-</section>
-
-<section id="pledges">
-	<h2>Pledges</h2>
-	<%= @pledge_count %>
-	<%= link_to "Pledge now", new_pledge_path %>
-</section>
-
 <section id="projects">
-	
-	<h2>Projects</h2>
+		
 	<% if @projects.any? %>
-	<ul class="grid_list">
+	<ul>
 		<% @projects.each do |project| %>
 		<li>
-			<h3><%= link_to project.title, project_path(project) %></h3>
+			
+			<h2><%= link_to project.title, project.url %></h2>
+			<p><%= project.description %></p>
+			
+			<% unless project.image.url.nil? %>
+				<%= link_to image_tag(project.image.thumbnail), project.url %>
+			<% end %>	
+		
+			
 		</li>
 		<% end %>
 	</ul>
@@ -38,22 +20,19 @@
 	
 </section>
 
-<section id="ideas">
+<section id="manifesto">
+
+	<h2>Wild Thing Manifesto</h2>
+	<h3>It is time to reconnect with nature</h3>
 	
-	<h2>Ideas</h2>
-	<% if @ideas.any? %>
-		<% @ideas.each do |idea| %>
-			<%= render "ideas/block", :idea => idea %>
-		<% end %>
-	<% end %>
-	
-	<p class="cta"><%= link_to "More ideas", ideas_path %></p>
-	
-	<%= render "ideas/form" %>
-	
+	<div class="">
+		<p>For 2 million years the idea of being separate from nature did not even occur to humans. We were nature, and nature was us. But recently we’ve turned our backs on nature. Thanks to technology and the comforts it has provided we are now the safest, fattest and most indoor human beings ever.  And it is getting worse every day.</p>
+		<p>We cannot resist life indoors, but the cost is indisputable. We’re slower, more depressed and less in control of our emotions than ever before.  We miss nature, and nature misses us too.</p>
+		<p>Contact with nature keeps us fitter, reduces stress, boosts our immune system and gives us a better perspective on problems.  We could do with more of that right now.</p>
+		<p>If you are with us, you will be part of a movement to change the way we live.  Let’s get children outside.  Let’s get them into nature.</p>
+	</div>
+
 </section>
 
-<section id="blog">
-	<%= render "posts/block", :post => @post %>
-	<p class="cta"><%= link_to "More updates", posts_path %></p>
-</section>
+
+

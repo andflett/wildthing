@@ -1,9 +1,7 @@
 class Project < ActiveRecord::Base
 
 	attr_accessible :title, :description, :url, :image
-	
-	belongs_to :category
-	
+		
 	validates_presence_of :title, :description
 		
 	extend FriendlyId

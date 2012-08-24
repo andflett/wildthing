@@ -10,4 +10,43 @@ $(document).ready(function(){
 	  return false;   
 	});
 	
+	// Forms
+	$('#new_pledge').each(function(i,el){
+		
+		$(el).find('label').hide();
+		
+		$(el).bind('submit',function(ev){
+			$(el).find('.auto input').each(function(i,input) {
+				if($(input).val()==$(input).data('placeholder')) {
+					$(input).val('')
+				}
+			})
+		})
+		
+		
+		$(el).find('.auto input').each(function(i,input) {
+		
+			input = $(input);
+			text = input.data('placeholder');
+		
+			if(input.val()=='') {
+				input.val(text)
+			} 
+		
+			input.bind('focus',function(ev){
+				if($(this).val()==$(this).data('placeholder')) {
+					$(this).val('')
+				}
+			});
+		
+			input.bind('blur',function(ev){
+				if($(this).val()=='') {
+					$(this).val($(this).data('placeholder'));
+				}
+			});
+			
+		});
+		
+	});
+	
 });

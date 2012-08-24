@@ -9,35 +9,64 @@
 		<%= stylesheet_link_tag    "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
+		
+		<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 			
 	</head>
 	<body class="<%= "section_#{params[:controller]} view_#{params[:action]}"%>">
 	
 		<% unless params[:action] == "teaser" %>
 	
-		<header class="container">
+		<header>
 			
-			<% if params[:controller] == "home" && params[:action] == "index" %>
-				<h1 class="branding ir">Wild Thing<span></span></h1>
-			<% else %>
-				<p class="branding"><a href="<%= index_path %>" class="ir">Wild Thing <span></span></a></p>
-			<% end %>
+			<section class="introduction">
 			
-			<p class="tagline">Reconnecting kids with nature</p>
+				<div class="container">
+					<% if params[:controller] == "home" && params[:action] == "index" %>
+						<h1 class="branding ir">Project Wild Thing<span></span></h1>
+					<% else %>
+						<p class="branding"><a href="<%= root_path %>" class="ir">Project Wild Thing <span></span></a></p>
+					<% end %>
+					
+					<% if params[:controller] == "home" && params[:action] == "index" %>
+
+						<section id="pledges">
+							
+							<p id="pledge_count">
+								<%= "you and" if session[:pledged] %>
+								<span><%= "%04d" %  @pledge_count %></span>
+								<%= "other" if session[:pledged] %> people have pledged
+							</p>
+							
+							<p id="pledge">&rdquo; I promise to spend as much time outdoors as I do looking at screens, and, by my advice and example, encourage others to do the same &ldquo;</p>
+
+							<% unless session[:pledged] %>
+							<p class="cta"><%= link_to "Take the Pledge", new_pledge_path %></p>
+							<% end %>
+							
+						</section>
+
+					<% end %>
+						
+				</div>
+			
+			</section>
 			
 		</header>
 		
 		<% end %>
 	
-		<div class="container" id="main" role="main">
-			<%= flash[:notice] %>
-			<%= yield %>
-		</div>
+		<section id="main" role="main">
+			<div class="container">
+				<%= flash[:notice] %>
+				<%= yield %>
+			</div>
+		</section>
 		
 		<% unless params[:action] == "teaser" %>
 		
 		<footer class="container">
-			<p>Brought to you by the Wild Thing <%= link_to "founding partners", partners_path %> and the <%= link_to "Good for Nothing", "http://goodfornoth.ning.com/" %> community</p>
+			<p>Brought to you by the Wild Thing <%= link_to "Founding Partners", partners_path %> &ndash; Designed by <a href="http://www.becausestudio.co.uk/">Because Studio</a> &ndash; Twittering at <a href="http://twitter.com/wearewildthing">@wearewildthing</a></p>
 		</footer>
 		
 		<% end %>

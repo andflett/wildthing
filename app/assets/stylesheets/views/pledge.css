@@ -1,0 +1,19 @@
+.section_pledges #main {
+	text-align: center;
+}
+
+.section_pledges #pledge h2 {
+	margin-bottom: 40px;
+	padding-top: 20px;
+}
+
+.section_pledges #pledge p {
+	padding: 0 100px;
+	line-height: 22px;
+	margin-bottom: 30px;
+}
+
+.view_pledged #main p {
+	padding: 0 200px;
+	line-height: 26px;
+}

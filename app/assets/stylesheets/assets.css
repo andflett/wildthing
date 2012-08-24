@@ -64,29 +64,9 @@
 	.grid_list li img {
 		display: block;
 		margin-top: 10px;
-		width: 300px;
-		height: 200px;
 	}
 	
 	.panel .grid_list li {
 		width: 227px;
 		margin-right: 10px;
-	}
-
-/* =teaser */
-
-	.view_teaser {
-		padding-top: 100px;
-		background: #ffffff;
-	}
-
-	.view_teaser img {
-		margin: 0 auto 10px;
-		display: block;
-	}
-	
-	.view_teaser p {
-		text-align: center;
-		font-size: 18px;
-		font-family: Courier, monospace;
 	}
