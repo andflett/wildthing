@@ -7,9 +7,8 @@ class PledgesController < ApplicationController
 	def create
 	  @pledge = Pledge.new(params[:pledge])
     if @pledge.save
-      #flash[:notice] = "Thanks, [download your certificate here]"
       session[:pledged] = true
-      redirect_to pledged_path
+      redirect_to root_path
     else
       redirect_to new_pledge_path
     end

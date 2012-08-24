@@ -11,7 +11,6 @@ Wildthing::Application.routes.draw do
 	resources :posts, :only => [:show,:index]
 	resources :pledges, :only => [:create,:new]
 	
-	match "pledged" => "pledges#pledged"
   match "background" => "home#background"
   match "partners" => "home#partners"
   
