@@ -33,9 +33,20 @@
 						<section id="pledges">
 							
 							<p id="pledge_count">
-								<%= "<br />you and".html_safe if session[:pledged] %>
-								<span><%= "%04d" %  (@pledge_count.to_i-1) %></span>
-								<%= "other" if session[:pledged] %> people have pledged
+
+								<% if session[:pledged] %>
+								
+									<br />you and
+									<span><%= "%04d" %  (@pledge_count.to_i-1) %></span>
+									other people have pledged
+								
+								<% else %>
+								
+									<span><%= "%04d" %  (@pledge_count.to_i) %></span>
+									people have pledged
+								
+								<% end %>
+								
 							</p>
 							
 							<% unless session[:pledged] %>
