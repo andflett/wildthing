@@ -2,7 +2,7 @@
   
 	<%= field_set_tag nil, :class => "auto" do %>
 		<%= f.input :name, :input_html => { :"data-placeholder" => "Your name" } %>
-		<%= f.input :email, :input_html => { :"data-placeholder" => "Your email address" } %>
+		<%= f.input :email, :as => :string, :input_html => { :"data-placeholder" => "Email address" } %>
 	<% end %>
 
 	<%= field_set_tag do %>

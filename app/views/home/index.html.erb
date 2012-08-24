@@ -26,7 +26,9 @@
 	<p>Contact with nature keeps us fitter, reduces stress, boosts our immune system and gives us a better perspective on problems.  We could do with more of that right now.</p>
 	<p>If you are with us, you will be part of a movement to change the way we live.  Let’s get children outside.  Let’s get them into nature.</p>
 
-	<p class="cta"><%= link_to "Take the Pledge", new_pledge_path %></p>
+	<% unless session[:pledged] %>
+	<p class="cta"><%= link_to "Take the Pledge", pledge_path %></p>
+	<% end %>
 
 </section>
 
