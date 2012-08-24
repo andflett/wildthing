@@ -5,6 +5,8 @@ gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'simple_form'
 
+gem 'fog'
+
 gem 'devise'
 gem 'feedzirra'
 gem 'carrierwave'
