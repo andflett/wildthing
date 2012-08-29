@@ -1,6 +1,6 @@
 ActiveAdmin.register Post, :as => "Blog Post" do
   
-  menu :priority => 3
+  menu :priority => 5
   
   filter :title
   

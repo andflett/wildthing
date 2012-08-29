@@ -39,11 +39,19 @@
 			<section class="introduction">
 			
 				<div class="container">
+					
 					<% if params[:controller] == "home" && params[:action] == "index" %>
 						<h1 class="branding ir">Project Wild Thing<span></span></h1>
 					<% else %>
 						<p class="branding"><a href="<%= root_path %>" class="ir">Project Wild Thing <span></span></a></p>
 					<% end %>
+					
+					<nav id="primary_navigation">
+						<ul>
+							<li><%= link_to "Projects" %></li>
+							<li><%= link_to "Ideas" %></li>
+						</ul>
+					</nav>
 					
 					<% if params[:controller] == "home" && params[:action] == "index" %>
 
@@ -74,9 +82,25 @@
 							<p class="cta"><a href="https://twitter.com/intent/tweet?&amp;via=wearewildthing&amp;url=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me:">Tweet your Pledge</a></p>
 							<!-- http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me -->
 							<% else %>
-							<p class="cta"><%= link_to "Take the Pledge", pledge_path %></p>
+							<p class="cta"><%= link_to "Make the Pledge", pledge_path %></p>
 							<% end %>
 							
+						</section>
+						
+						<section>
+
+							<h2>Inspiration from the wild</h2>
+							
+							<p>Help us reach 100,000 pledges. [why?]</p>
+
+							<% unless @inspiration.nil? %>
+							<iframe src="http://player.vimeo.com/video/<%= @inspiration.vimeo_id %>" width="400" height="250" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+							<% end %>
+
+							<p><%= link_to "Read more about the film", film_path %>
+
+							<p class="cta"><%= link_to "Read the Manifesto", manifesto_path %></p>
+
 						</section>
 
 					<% end %>

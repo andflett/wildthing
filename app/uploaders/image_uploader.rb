@@ -7,8 +7,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  version :panel do
-    process :resize_to_fit => [440,nil]
+  version :grid do
+    process :resize_to_fit => [300,nil]
   end
 
   version :thumbnail do

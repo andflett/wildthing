@@ -6,14 +6,16 @@ Wildthing::Application.routes.draw do
   
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-	resources :projects, :only => [:show]
+	resources :projects, :only => [:show,:index]
 	resources :ideas, :only => [:create,:index]
 	resources :posts, :only => [:show,:index]
 	resources :pledges, :only => [:create,:new]
+	resources :partners, :only => [:index]
 	
 	match "pledge" => "pledges#new"
-  match "background" => "home#background"
-  match "partners" => "home#partners"
+  match "manifesto" => "home#manifesto"
+  match "privacy" => "home#privacy"
+  match "the-nature-film" => "home#film", :as => "film"
   
   root :to => "home#index"
   

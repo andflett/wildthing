@@ -6,6 +6,7 @@ gem 'mysql2'
 gem 'simple_form'
 
 gem 'fog'
+gem 'gibbon'
 
 gem 'devise'
 gem 'feedzirra'

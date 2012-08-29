@@ -1,0 +1,9 @@
+<h1>Projects</h1>
+
+<% if @projects.any? %>
+	<ul class="grid_list">
+		<% @projects.each do |project| %>
+			<li><%= link_to project.title, project.url %></li>
+		<% end %>
+	</ul>
+<% end %>

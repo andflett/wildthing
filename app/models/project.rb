@@ -1,9 +1,11 @@
 class Project < ActiveRecord::Base
 
-	attr_accessible :title, :description, :url, :image
+	attr_accessible :title, :description, :url, :image, :category_id, :featured
 		
 	validates_presence_of :title, :description
 		
+	belongs_to :category
+	
 	extend FriendlyId
   friendly_id :title, use: :slugged
   

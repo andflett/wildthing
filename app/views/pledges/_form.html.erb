@@ -3,10 +3,13 @@
 	<%= field_set_tag nil, :class => "auto" do %>
 		<%= f.input :name, :input_html => { :"data-placeholder" => "Your name" } %>
 		<%= f.input :email, :as => :string, :input_html => { :"data-placeholder" => "Email address" } %>
+		<%= f.input :subscribed %>
 	<% end %>
 
 	<%= field_set_tag do %>
 		<%= f.submit :value => "Pledge now" %>
 	<% end %>
+	
+	<p>(We won't share your details with anyone, check out our <%= link_to "privacy policy", privacy_path %>)</p>
   
 <% end %>

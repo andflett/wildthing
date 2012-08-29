@@ -13,10 +13,10 @@ $(document).ready(function(){
 	// Forms
 	$('#new_pledge').each(function(i,el){
 		
-		$(el).find('label').hide();
+		$(el).find('.string label').hide();
 		
 		$(el).bind('submit',function(ev){
-			$(el).find('.auto input').each(function(i,input) {
+			$(el).find('.auto input[type="text"]').each(function(i,input) {
 				if($(input).val()==$(input).data('placeholder')) {
 					$(input).val('')
 				}
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		})
 		
 		
-		$(el).find('.auto input').each(function(i,input) {
+		$(el).find('.auto input[type="text"]').each(function(i,input) {
 		
 			input = $(input);
 			text = input.data('placeholder');

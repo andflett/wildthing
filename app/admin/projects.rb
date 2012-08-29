@@ -1,16 +1,20 @@
 ActiveAdmin.register Project do
   
-  menu :priority => 2
+  menu :priority => 1
   
-  filter :title
+  filter :category
   
   index do
     column :title
+    column :category
+    column :featured
     default_actions
   end
   
   show do |project|
     attributes_table do
+      row :category
+      row :featured
       row :title
       row :url
       row :description
@@ -21,6 +25,10 @@ ActiveAdmin.register Project do
   end
   
    form :html => { :enctype => "multipart/form-data" }  do |f|
+    f.inputs "Meta" do
+      f.input :category
+      f.input :featured
+    end
     f.inputs "Details" do
       f.input :title
       f.input :url

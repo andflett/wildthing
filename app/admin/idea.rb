@@ -1,6 +1,6 @@
 ActiveAdmin.register Idea do
   
-  menu :priority => 5
+  menu :priority => 4
   
   config.clear_sidebar_sections!
   
