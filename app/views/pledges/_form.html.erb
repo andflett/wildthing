@@ -1,7 +1,7 @@
 <%= simple_form_for [@pledge] do |f| %>
   
 	<%= field_set_tag nil, :class => "auto inline_form" do %>
-		I promise to spend as much time outdoors as I do looking at screens, 
+		I promise to spend as much of my free time outdoors as I do looking at screens, 
 		and, by my advice and example, encourage others to do the same 
 	<% end %>
 
@@ -12,5 +12,4 @@
 	<%= f.submit :value => "Pledge" %>
 	<%= f.input :subscribed, :label => "Keep me updated with progress" %>
 	
-  
 <% end %>
