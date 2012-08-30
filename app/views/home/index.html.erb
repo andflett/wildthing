@@ -1,5 +1,5 @@
 <section id="projects">
-		
+	
 	<% if @wild_thing_projects.any? %>
 	<ul>
 		<% @wild_thing_projects.each do |project| %>
@@ -13,20 +13,23 @@
 		<% end %>
 	</ul>
 	<% end %>
+
+	<p>More about <%= link_to "The Nature Film", film_path %></p>
 	
 </section>
-
 
 <% if @projects.any? %>
 <section class="full_panel">
 
-	<h2>Get involved, go wild</h2>
-	<h3>Other wild projects around the web</h3>
-	
-	<ul>
+	<div class="heading">
+		<h1>Get involved, go wild</h1>
+		<h2>Other wild projects around the web</h2>
+	</heading>
+
+	<ul class="grid_list">
 		<% @projects.each do |project| %>
 		<li>
-			<h2><%= link_to project.title, project.url %></h2>
+			<h3><%= link_to project.title, project.url %></h3>
 			<p><%= project.description %></p>
 			<% unless project.image.url.nil? %>
 				<%= link_to image_tag(project.image), project.url %>
@@ -34,17 +37,19 @@
 		</li>
 		<% end %>
 	</ul>
-	
+
 	<p class="cta"><%= link_to "More projects", projects_path %></p>
-	
+
 </section>
 <% end %>
 
-<section class="full_panel">
+<section class="full_panel" id="ideas">
 
-	<h2>Your ideas</h2>
-	<h3>How can we re-connect with nature?</h3>
-	
+	<div class="heading">
+		<h1>Your ideas</h1>
+		<h2>How can we re-connect with nature?</h2>
+	</div>
+
 	<% if @ideas.any? %>
 	<ul>
 		<% @ideas.each do |idea| %>
@@ -52,10 +57,7 @@
 		<% end %>
 	</ul>
 	<% end %>
-	
+
 	<%= render "ideas/form" %>
-	
+
 </section>
-
-
-

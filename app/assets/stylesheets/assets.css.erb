@@ -9,69 +9,40 @@
     background-position: top left;
   }
 
-/* =panel */
+/* =heading */
 
-	.panel {
-		border-top: 1px solid #576027;
-		padding: 10px 0 30px;
-		width: 465px;
-		float: left;
-		margin-right: 30px;
-		height: auto !important;
-		height: 200px;
-		min-height: 200px;
-	}
-	
-	.panel:nth-child(2n+2) { margin: 0; }
-
-	.panel h2, .panel h1 {
-		text-transform: uppercase;
-		font-family: ParisBold;
-		margin-bottom: 27px;
-		font-size: 28px;
-		line-height: 32px;
-	}
-	
-	.panel h2 span {
-		display: block;
-		color: #cad400;
-	}
-	
-	.full_panel {
-		margin-bottom: 20px;
+	.heading {
+		text-align: center;
+		margin-bottom: 40px;
 	}
 
-	.full_panel h2 {
+	.heading h1 {
 		text-align: center;
 		font-family: Courier;
 		font-weight: normal;
 		color: #222;
 		font-size: 12px;
-		line-height: 35px;
+		line-height: 46px;
 		margin-bottom: 0;
 	}
+	
+	.heading h2 {
+		font-size: 32px;
+	}
 
-	.full_panel h3 {
+/* =full_panel */
+	
+	.full_panel {
+		margin-bottom: 20px;
 		text-align: center;
-		color: #989C2A;
-		margin-bottom: 30px;
 	}
 
 	.full_panel p {
-		text-align: center;
 		padding: 0 100px;
-		font-size: 13px;
-		line-height: 24px;
-		margin-bottom: 30px;
-	}
-
-	.full_panel .cta {
-		margin-top: 40px;
 	}
 	
-	.full_panel img {
-		display: block;
-		margin: 0 0 50px;
+	.full_panel p.cta {
+		margin-top: 50px;
 	}
 	
 /* =grid_list */
@@ -108,22 +79,38 @@
 		margin-right: 10px;
 	}
 	
+/*= pull */
+
+	p.pull {
+		font-size: 24px; 
+		line-height: 32px;
+		margin: 0;
+		padding: 20px 0 40px;
+		font-weight: normal;
+		color: #989C2A;
+		font-family: ParisBold;
+		text-transform: uppercase;
+		-webkit-font-smoothing: subpixel-antialiased !important;
+	}
+	
 /*= cta */
 
-	.cta {
+	p.cta {
 		margin: 0;
+		-webkit-font-smoothing: subpixel-antialiased !important;
 	}
 
 	.cta a {
 		display: inline-block;
-		color: #1a1a1a;
+		color: #3f4521;
 		line-height: 47px;
 		width: 273px;
 		font-size: 18px;
 		font-family: 'ParisBlack';
 		background: url(<%= asset_path "buttons/wide.png" %>) no-repeat center center;
+		text-align: center;
 	}
 
 	.cta a:hover,
 	.cta a:focus,
-	.cta a:active { text-decoration: none; color: #ffffff; }
+	.cta a:active { text-decoration: underline; }

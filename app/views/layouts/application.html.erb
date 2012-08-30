@@ -2,8 +2,8 @@
 <html>
 	<head>
 		
-		<title>Wild Thing &ndash; Re-connecting kids with nature</title>
-		<meta name="description" content="Ideas, inspiration and activities to re-connect kids with nature" />
+		<title>Wild Thing &mdash; Re-connecting kids with nature</title>
+		<meta name="description" content="Ideas, inspiration and activities to re-connect kids with nature." />
 		<meta name="keywords" content="kids, nature, deficit, disorder, wild, thing" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<%= stylesheet_link_tag    "application", :media => "all" %>
@@ -31,78 +31,31 @@
 			
 	</head>
 	<body class="<%= "section_#{params[:controller]} view_#{params[:action]}"%>">
-	
-		<% unless params[:action] == "teaser" %>
-	
+		
 		<header>
 			
 			<section class="introduction">
 			
 				<div class="container">
 					
-					<% if params[:controller] == "home" && params[:action] == "index" %>
+					<% if is_home? %>
+					
 						<h1 class="branding ir">Project Wild Thing<span></span></h1>
-					<% else %>
-						<p class="branding"><a href="<%= root_path %>" class="ir">Project Wild Thing <span></span></a></p>
-					<% end %>
-					
-					<nav id="primary_navigation">
-						<ul>
-							<li><%= link_to "Projects" %></li>
-							<li><%= link_to "Ideas" %></li>
-						</ul>
-					</nav>
-					
-					<% if params[:controller] == "home" && params[:action] == "index" %>
-
-						<section id="pledges">
-							
-							<p id="pledge_count">
-
-								<% if session[:pledged] %>
-								
-									<br />you and
-									<span><%= "%04d" %  (@pledge_count.to_i-1) %></span>
-									other people have pledged
-								
-								<% else %>
-								
-									<span><%= "%04d" %  (@pledge_count.to_i) %></span>
-									people have pledged
-								
-								<% end %>
-								
-							</p>
-							
-							<% unless session[:pledged] %>
-							<p id="pledge">&rdquo; I promise to spend as much time outdoors as I do looking at screens, and, by my advice and example, encourage others to do the same &ldquo;</p>
-							<% end %>
-
-							<% if session[:pledged] %>
-							<p class="cta"><a href="https://twitter.com/intent/tweet?&amp;via=wearewildthing&amp;url=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me:">Tweet your Pledge</a></p>
-							<!-- http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me -->
-							<% else %>
-							<p class="cta"><%= link_to "Make the Pledge", pledge_path %></p>
-							<% end %>
-							
-						</section>
 						
-						<section>
-
-							<h2>Inspiration from the wild</h2>
-							
-							<p>Help us reach 100,000 pledges. [why?]</p>
-
-							<% unless @inspiration.nil? %>
-							<iframe src="http://player.vimeo.com/video/<%= @inspiration.vimeo_id %>" width="400" height="250" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-							<% end %>
-
-							<p><%= link_to "Read more about the film", film_path %>
-
-							<p class="cta"><%= link_to "Read the Manifesto", manifesto_path %></p>
-
-						</section>
-
+						<%= render "pledges/introduction" %>
+					
+					<% else %>
+					
+						<p class="branding"><a href="<%= root_path %>" class="ir">Project Wild Thing <span></span></a></p>
+						
+						<nav id="primary_navigation">
+							<ul>
+								<li><%= link_to "Pledge", "#{root_path}#pledge" %>
+								<li><%= link_to "Projects", projects_path %></li>
+								<li><%= link_to "Your Ideas", "#{root_path}#ideas" %></li>
+							</ul>
+						</nav>
+						
 					<% end %>
 						
 				</div>
@@ -111,22 +64,16 @@
 			
 		</header>
 		
-		<% end %>
-	
-		<section id="main" role="main">
+		<div id="primary_content" role="main">
 			<div class="container">
 				<%= flash[:notice] %>
 				<%= yield %>
 			</div>
-		</section>
-		
-		<% unless params[:action] == "teaser" %>
-		
-		<footer class="container">
-			<p>Brought to you by the Wild Thing <%= link_to "Founding Partners", partners_path %> &ndash; Designed by <a href="http://www.becausestudio.co.uk/">Because Studio</a> &ndash; Twittering at <a href="http://twitter.com/wearewildthing">@wearewildthing</a></p>
+		</div>
+				
+		<footer>
+			<p class="container">Created by Wild Thing <%= link_to "Founding Partners", partners_path %>, Designed <a href="http://www.becausestudio.co.uk/">Because Studio</a>, Twittering at <a href="http://twitter.com/wearewildthing">@wearewildthing</a>, Privacy in our <%= link_to "policy", privacy_path %></p>
 		</footer>
-		
-		<% end %>
-	
+			
 	</body>
 </html>

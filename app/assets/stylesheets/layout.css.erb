@@ -28,7 +28,7 @@
 		}
 		
 		header .introduction {
-			background: #1a1a1a url(<%= asset_path "layout/secret_stash.gif" %>) no-repeat center top;		
+			background: #1a1a1a url(<%= asset_path "layout/secret_stash.gif" %>) no-repeat center top;					
 		}
 		
 		header .container {	
@@ -36,7 +36,7 @@
 			overflow: visible;
 			padding: 0;
 			position: relative;
-			padding: 90px 0 28px;
+			padding: 165px 0 30px;
 		}
 		
 		header .branding {
@@ -57,18 +57,46 @@
 			background: url("branding/wild_thing_logo.gif") no-repeat;
 		}
 		
-	/* =main */
+		header nav {
+			padding-left: 30px;
+		}
+		
+		header nav ul {
+			padding: 0;
+			list-style-type: none;
+			text-align: center;
+		}
+		
+		header nav ul li {
+			padding: 0 25px 0 0;
+			margin: 0;
+			display: inline-block;
+			font-size: 24px;
+			text-align: left;
+		}
+		
+		header nav ul li:first-child {
+			padding-right: 40px;
+		}
+		
+		header nav ul li a {
+			font-family: ParisBlack;
+			font-weight: normal;
+			color: #ffffff;
+			display: block;
+		}
+		
+	/* =primary_content */
 	
-		#main {
-			padding: 60px 0 400px;
+		#primary_content {
+			padding: 45px 0 400px;
 			background-color: #ffffff;
-			background-image: url(<%= asset_path "layout/footer.gif" %>),
-												url("layout/main.gif");
-			background-position: center bottom, center top;
+			background-image: url(<%= asset_path "layout/footer.gif" %>), url("layout/main.gif");
+			background-position: center bottom, top center;
 			background-repeat: no-repeat, repeat-x;
 		}
 		
-		#main p {
+		#primary_content p {
 			-webkit-font-smoothing: antialiased; 
 		}
 		
@@ -76,11 +104,7 @@
 	
 		footer {
 			color: #ffffff;
-			padding: 20px 0 30px;
-		}
-		
-		footer p { 
-			margin: 0; 
+			padding: 20px 0 20px;
 		}
 
 }

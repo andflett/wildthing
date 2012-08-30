@@ -1,9 +1,5 @@
 class PledgesController < ApplicationController
 
-	def new
-	  @pledge = Pledge.new
-	end
-	
 	def create
 	  
 	  @pledge = Pledge.new(params[:pledge])

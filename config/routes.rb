@@ -9,10 +9,9 @@ Wildthing::Application.routes.draw do
 	resources :projects, :only => [:show,:index]
 	resources :ideas, :only => [:create,:index]
 	resources :posts, :only => [:show,:index]
-	resources :pledges, :only => [:create,:new]
+	resources :pledges, :only => [:create]
 	resources :partners, :only => [:index]
 	
-	match "pledge" => "pledges#new"
   match "manifesto" => "home#manifesto"
   match "privacy" => "home#privacy"
   match "the-nature-film" => "home#film", :as => "film"
