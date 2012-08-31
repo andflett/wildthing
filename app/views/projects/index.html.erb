@@ -1,11 +1,22 @@
 <h1>Projects</h1>
 
-[categorised]
+<% if @categories.any? %>
 
-<% if @projects.any? %>
-	<ul class="grid_list">
-		<% @projects.each do |project| %>
-			<li><%= link_to project.title, project.url %></li>
+	<ul>
+		<% @categories.each do |category| %>
+		<li><a href="#<%= category.slug %>"><%= category.title %></a></li>
 		<% end %>
 	</ul>
+	
+	<% @categories.each do |category| %>
+		<h2 id="<%= category.slug %>"><%= category.title %></h2>
+		<% if category.projects.any? %>
+		<ul class="grid_four">
+			<% category.projects.each do |project| %>
+				<%= render :partial => "block", :locals => { :project => project } %>
+			<% end %>
+		</ul>
+		<% end %>
+	<% end %>
+		
 <% end %>

@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-	attr_accessible :title, :description, :url, :image, :category_id, :featured
+	attr_accessible :title, :description, :url, :image, :category_id, :featured, :body
 		
 	validates_presence_of :title, :description
 		
@@ -14,7 +14,7 @@ class Project < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
   def self.featured
-    self.find_by_featured(true) || self.first
+    self.where('featured = true').limit(4) || nil
   end
 
 end

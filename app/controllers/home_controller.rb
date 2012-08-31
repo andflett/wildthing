@@ -2,8 +2,8 @@ class HomeController < ApplicationController
 
   def index
     
-    @wild_thing_projects = Project.where('category_id = 1').order('created_at DESC').limit(2)
-    @projects = Project.where('featured = true').limit(4)
+    @wild_thing_projects = Category.find_by_title('Wild Thing').projects.limit(2)
+    @projects = Project.featured
     @pledge_count = Pledge.count
     @inspiration = Inspiration.order('created_at DESC').first
     @ideas = Idea.where('published = true').order('created_at DESC').limit(5)
@@ -17,6 +17,7 @@ class HomeController < ApplicationController
   end
 
   def film
+    @inspirations = Inspiration.all
   end
 
 end

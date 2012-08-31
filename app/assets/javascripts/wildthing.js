@@ -25,7 +25,7 @@ $(document).ready(function(){
 		
 		
 		$(el).find('.auto input[type="text"]').each(function(i,input) {
-		
+
 			input = $(input);
 			text = input.data('placeholder');
 		

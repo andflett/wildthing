@@ -1,18 +1,8 @@
-<div class="intro_panel">
-	
-	<section class="introduction">
-		<h1><%= @project.title %></h1>
-		<%= simple_format @project.description %>
-	</section>
-	
-	<p class="cta"><%= link_to "Go to App", @project.url %></p>
-	
-</div>
+<h1><%= @project.title %></h1>
 
-<section class="primary_content">
-		
-	<% unless @project.image.url.nil? %>
-		<%= image_tag @project.image.panel %>
-	<% end %>
-		
-</section>
+<% unless @project.image.url.nil? %>
+	<%= image_tag @project.image.thumbnail %>
+<% end %>
+
+<%= markdown.render(@project.body).html_safe %>
+	

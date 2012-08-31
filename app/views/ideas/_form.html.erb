@@ -1,9 +1,10 @@
 <%= simple_form_for [@idea] do |f| %>
   
-	<%= field_set_tag do %>
-		<%= f.input :name, :label => "Your name", :input_html => { :class => "required" } %>
-		<%= f.input :title %>
-		<%= f.input :idea %>
+	<%= field_set_tag nil, :class => "auto" do %>
+		<%= f.input :name, :label => "Your name" %>
+		<%= f.input :title, :input_html => { :"data-placeholder" => "Your idea in under 90 characters" } %>
+		<%= f.input :idea, :as => :text, :label => "Full idea" %>
+		<p>We love conversation, so we're Tweeting ideas from @wearewildthing. If you'd like to be mentioned, pop your twitter handle below</p>
 		<%= f.input :twitter_handle, :label => "Your Twitter handle" %>
 	<% end %>
 

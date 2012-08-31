@@ -18,6 +18,7 @@ ActiveAdmin.register Project do
       row :title
       row :url
       row :description
+      row :body
       row :image do
         image_tag(project.image.thumbnail) unless project.image.url.nil?
       end
@@ -33,7 +34,8 @@ ActiveAdmin.register Project do
       f.input :title
       f.input :url
       f.input :image
-      f.input :description
+      f.input :description, :as => :text, :input_html => { :rows => 3 }
+      f.input :body, :as => :text, :input_html => { :rows => 6 }
     end
     f.buttons
   end

@@ -1,10 +1,20 @@
-<div id="introduction">
-	<h1>The Nature Film</h1>
-</div>
+<h1>The Nature Film</h1>
 
-<iframe src="http://player.vimeo.com/video/23185904" width="940" height="540" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe id="vimeoembed" src="http://player.vimeo.com/video/44097760?title=0&amp;byline=0&amp;portrait=0&amp;color=b8d432" width="940" height="528" frameborder="0"></iframe>
 
-[blurb]
+<p>Project Wild Thing is the core part of a feature documentary of the same name, made in collaboration with the Channel 4 Britdoc Foundation, Good For Nothing, the National Trust, the RSPB, and the NHS.</p>
+<p>According to UNICEF, children in the UK are the unhappiest kids in the western world. Plenty of food, millions of TV channels, the internet, Wii, no wars to worry about &ndash; when there’s so much to be happy about, what’s going on? Shiny screens in every room, increased parental fears of dirt and the unknown and the elimination of free public space are all converging to create a generation that has no connection with nature. So what can we do to get parents and kids out into the woods?</p>
+<p>Filmmaker DAVID BOND thinks Mother Nature needs a helping hand getting his kids to forget the distractions of the modern world and wake up to the benefits of nature. He appoints himself the Marketing Director for Nature and, with the help of advertising and marketing experts, he sets out to persuade apathetic consumers, and his family, of the benefits of this amazing, free, wonder-product. </p>
 
-[clips]
 
+<% if @inspirations.any? %>
+<h2>Inspiration from the wild</h2>
+<ul class="grid_two">
+	<% @inspirations.each do |inspiration| %>
+	<li>
+		<h2><%= inspiration.title %></h2>
+		<iframe id="vimeoembed" src="http://player.vimeo.com/video/<%= inspiration.vimeo_id %>?title=0&amp;byline=0&amp;portrait=0&amp;color=b8d432" width="400" height="225" frameborder="0"></iframe>
+	</li>
+	<% end %>
+</ul>
+<% end %>
