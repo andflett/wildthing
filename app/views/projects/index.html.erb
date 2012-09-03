@@ -1,22 +1,22 @@
-<h1>Projects</h1>
-
 <% if @categories.any? %>
 
-	<ul>
+	<ul class="categories">
 		<% @categories.each do |category| %>
 		<li><a href="#<%= category.slug %>"><%= category.title %></a></li>
 		<% end %>
 	</ul>
 	
 	<% @categories.each do |category| %>
-		<h2 id="<%= category.slug %>"><%= category.title %></h2>
-		<% if category.projects.any? %>
-		<ul class="grid_four">
-			<% category.projects.each do |project| %>
-				<%= render :partial => "block", :locals => { :project => project } %>
+		<section class="project_category">
+			<h2 id="<%= category.slug %>"><%= category.title %></h2>
+			<% if category.projects.any? %>
+			<ul class="grid grid_four">
+				<% category.projects.each do |project| %>
+					<%= render :partial => "block", :locals => { :project => project } %>
+				<% end %>
+			</ul>
 			<% end %>
-		</ul>
-		<% end %>
+		</section>
 	<% end %>
 		
 <% end %>

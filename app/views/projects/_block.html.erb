@@ -1,10 +1,10 @@
 <li>
-	<h2>
+	<h3>
 	<% if project.body.blank? %>
 		<%= link_to project.title, project_path(project) %>
 	<% else %>
 		<%= link_to project.title, project.url %>
 	<% end %>
-	</h2>
+	</h3>
 	<%= markdown.render(project.description).html_safe %>
 </li>

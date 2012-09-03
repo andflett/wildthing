@@ -21,5 +21,6 @@ if Rails.env.production?
     } 
     config.fog_directory  = ENV['bucket']
     config.fog_public     = false
+    config.s3_region      = 'eu-west-1'
   end
 end

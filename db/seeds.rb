@@ -27,7 +27,7 @@ projects = Project.create([
   {
     title: 'Wild Time App',
   	url: 'http://wildtime.projectwildthing.com/',
-  	description: 'Time-based activities in the wild.',
+  	description: 'Time-based activities in the wild',
   	category_id: @cat_wildthing.id
   },
   {
@@ -41,7 +41,7 @@ projects = Project.create([
   { 
   	title: 'Forest Schools',
   	url: 'http://www.forestschools.com/',
-  	description: 'A big organisation dedicated to encouraging and inspiring individuals of any age through positive outdoors experiences. Forest Schools are focussed on getting kids out of the classroom and into natural learning environments.',
+  	description: 'Dedicated to encouraging and inspiring individuals of any age to get kids out of the classroom and into natural learning environments.',
   	category_id: @cat_member.id,
   	featured: true
   },
