@@ -1,11 +1,27 @@
 /* Pledges */
 	
+	.section_home.view_index.pledged_ header #primary_navigation:after {
+		content: '';
+		display: block;
+		height: 109px;
+		width: 86px;
+		background: url(<%= asset_path "assets/arrow_down_left.png" %>) no-repeat top left;
+		position: absolute;
+		top: -94px;
+		right: 200px;
+	}
+	
+	.section_home.view_index.pledged_ header #primary_navigation {
+		padding-right: 135px;
+		padding-bottom: 10px;
+	}
+	
 	.section_home .goal {
 		font-family: 'ParisBlack';
 		margin: 0 0 23px;
 		line-height: 30px;
 		text-align: center;
-		font-size: 15px;
+		font-size: 16px;
 	}
 	
 	.section_home .goal span {
@@ -17,26 +33,19 @@
 		color: #cad400;
 	}
 	
-	.section_home .goal a {
-		color: #ffffff;
-		font-size: 20px;
-		display: inline-block;
-		margin: 0 5px 10px;
-		border-bottom: 1px dotted #ffffff;
-	}
-	
-	.section_home .goal a:hover {
-		text-decoration: none;
-		border-bottom: 1px solid #1a1a1a;
+	.section_home .pledge {
+		font-family: 'ParisBlack';
+		font-size: 16px;
 	}
 	
 	.section_home .panels {
 		width: 100%;
 		overflow: hidden;
+		margin-bottom: 60px;
 	}
 	
 	.section_home .panel {
-		padding: 10px 0 0;
+		padding: 0;
 		width: 465px;
 		float: left;
 		margin-right: 30px;
@@ -44,106 +53,170 @@
 		height: 200px;
 		min-height: 200px;
 		text-align: center;
+		position: relative;
+	}
+	
+	.section_home .panel:first-child:after {
+		content: '';
+		display: block;
+		height: 190px;
+		width: 160px;
+		background: url(<%= asset_path "assets/arrow_up_right.png" %>) no-repeat top left;
+		position: absolute;
+		bottom: 20px;
+		right: -65px;
 	}
 	
 	.section_home .panel:nth-child(2n+2) { margin: 0; }
-
-	.section_home .panel h2 {
-		text-transform: uppercase;
-		font-family: ParisBold;
-		margin-bottom: 35px;
-		font-size: 26px;
-		line-height: 28px;
-		color: #cad400;
-	}
-	
-	.section_home .panel h2 span {
-		text-align: center;
-		font-family: Courier;
-		font-weight: normal;
-		color: #ffffff;
-		font-size: 12px;
-		line-height: 38px;
-		margin-bottom: 0;
-		display: block;
-	}
-	
-	.section_home .panel iframe {
-		margin-bottom: 25px;
-	}
-	
-	.section_home .panel fieldset {
-		padding-bottom: 25px;
-	}
-	
-	.section_home .panel .inline_form {
-		font-size: 16px;
-		font-family: ParisBlack;
-		line-height: 28px;
-		width: 390px;
-		margin: 0 auto;
-		padding-bottom: 30px;
-	}
-	
-	.section_home .panel input[type="text"] {
-		display: inline-block;
-		font-size: 14px;
-		padding: 0 0 5px; 
-		margin: 0 10px 0;
-		font-family: ParisBlack;
-		letter-spacing: 1px;
-		color: #ffffff;
-		background: #1a1a1a;
-		width: 170px;
-		text-align: center;
-		border: 0;
-		border-bottom: 1px dotted #ffffff;
-	}
 		
-	.section_home .panel .boolean {
-		padding-top: 20px;
+	.section_home #pledge {
+		padding-top: 25px;
+		text-align: left;
+		padding-left: 50px;
+		width: 415px;
+	}	
+	
+	.section_home #pledge h2 {
+		font-size: 24px;
+		margin-bottom: 10px;
+		color: #CAD400;
 	}
 	
-	.section_home .panel .boolean label {
-		font-family: ParisBlack;
-		font-size: 12px;
-		display: inline;
-		padding-left: 5px;
+	.section_home #pledge .auto input {
+		width: 250px;
+		font-size: 13px;
+		padding: 7px 12px;
 	}
-
-/* Projects */
-
-	.section_home #projects {
-		margin-bottom: 45px;
-	}
-
-	.section_home #projects ul {
-		list-style-type: none;
+	
+	.section_home #pledge fieldset {
 		padding: 0;
+		width: 280px;
 		overflow: hidden;
 	}
 
-	.section_home #projects ul li:last-child {
-		margin: 0;
-	}
-
-	.section_home #projects ul li {
-		padding: 0 40px;
-		width: 400px;
+	.section_home #pledge div.boolean {
 		float: left;
-		text-align: center;
+		width: 150px;
+		text-transform: uppercase;
 	}
-
-	.section_home #projects ul li img {
-		display: block;
-		margin-bottom: 10px;
+	
+	.section_home #pledge div.boolean input {
+		position: relative;
+		top: 1px;
+		margin: 0;
+		border: 1px solid #cccccc;
 	}
-
-	.section_home #projects ul li p {
-		margin-bottom: 25px;
+	
+	.section_home #pledge .boolean label {
 		font-size: 12px;
+		display: inline-block;
+		padding-left: 5px;
+	}
+	
+	.section_home #pledge .actions input[type="submit"] {
+		float: left;
+	}
+	
+/* =projects */
+
+	.section_home #projects {
+		padding-bottom: 45px;
 	}
 
-	.section_home #projects ul li h2 {
-		margin-bottom: 5px;
+	.section_home #projects ul.grid_two {
+		padding-bottom: 45px;
+		padding-top: 15px;
+	}
+	
+	.section_home #projects .cta a {
+		margin: 0 auto;
+		display: block;
+	}
+
+/* =ideas */
+
+	#ideas {
+		width: 100%;
+		overflow: hidden;
+	}
+	
+	#ideas h2 {
+		color: #cad400;
+		padding-bottom: 5px;
+	}
+
+	#ideas form {
+		width: 370px;
+		float: left;
+	}
+	
+	#ideas form p {
+		margin: 0 0 5px;
+	}
+	
+	#ideas form .string input, #ideas form .email input {
+		font-size: 13px;
+		width: 320px;
+		font-family: courier;
+		-webkit-font-smoothing: antialiased;
+	}
+	
+	#ideas form fieldset {
+		padding-bottom: 0;
+	}
+	
+	#ideas form textarea {
+		width: 330px;
+		height: 120px;
+	}
+	
+	#ideas form input[type="submit"] {
+		margin-top: -3px;
+	}
+	
+	#ideas form #idea_title {
+		height: 70px;
+	}
+	
+	.user_ideas {
+		width: 480px;
+		float: left;
+		padding-left: 25px;
+		padding-top: 26px;
+	}
+	
+	.user_ideas ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	
+	.user_ideas .name {
+		margin: 0;
+		font-size: 14px;
+		font-family: ParisBlack;
+		-webkit-font-smoothing: subpixel-antialiased !important;
+	}
+	
+	.user_ideas .name em {
+		color: #cad400;
+		font-style: normal;
+	}
+	
+	.user_ideas .idea {
+		text-transform: none;
+		line-height: 20px;
+		margin-bottom: 21px;
+	}
+	
+	.user_ideas p.call {
+		margin: 0;
+		font-size: 12px;
+		text-transform: uppercase;
+		padding-top: 0px;
+	}
+	
+	.user_ideas p.call a {
+		text-decoration: underline;
+		color: #cad400;
 	}

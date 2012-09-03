@@ -1,0 +1,22 @@
+<section id="ideas">
+
+	<h2>Share your ideas</h2>
+	
+	<%= render "ideas/form" %>
+
+	<% if @ideas.any? %>
+	
+	<div class="user_ideas">
+				
+		<ul id="idea_list">
+			<% @ideas.each do |idea| %>
+				<%= render :partial => "ideas/block", :locals => { :idea => idea } %>
+			<% end %>
+		</ul>
+		
+		<p class="call"><%= link_to "More ideas", ideas_path %></p>
+		
+	</div>
+	<% end %>
+	
+</section>

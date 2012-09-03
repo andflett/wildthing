@@ -1,15 +1,13 @@
 <%= simple_form_for [@pledge] do |f| %>
   
-	<%= field_set_tag nil, :class => "auto inline_form" do %>
-		I promise to spend as much of my free time outdoors as I do looking at screens, 
-		and, by my advice and example, encourage others to do the same 
+	<%= field_set_tag nil, :class => "auto" do %>
+		<%= f.input :name, :input_html => { :"data-placeholder" => "Your name" } %>
+		<%= f.input :email, :input_html => { :"data-placeholder" => "Your email address" } %>
 	<% end %>
 
-	<%= field_set_tag nil, :class => "auto" do %>
-		<%= f.text_field :name, :"data-placeholder" => "Your name" %> <%= f.text_field :name, :"data-placeholder" => "Your email" %>
+	<%= field_set_tag nil, :class => "actions" do %>
+		<%= f.input :subscribed, :label => "Keep me updated" %>
+		<%= f.submit :value => "Pledge" %>	
 	<% end %>
-	
-	<%= f.submit :value => "Pledge" %>
-	<%= f.input :subscribed, :label => "Keep me updated with progress" %>
 	
 <% end %>

@@ -14,5 +14,6 @@
  *= require base-datasets
  *= require layout
  *= require assets
+ *= require jquery.qtip
  *= require_tree .
 */

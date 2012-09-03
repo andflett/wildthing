@@ -1,35 +1,18 @@
-<p class="goal">
-	read the <%= link_to " Wild Thing Manifesto", manifesto_path %> and join 
-	<span><%= "%05d" %  (@pledge_count.to_i) %></span> 
-	people re-connecting with nature
-</p>
+<% unless session[:pledged] %>
 
-<div class="panels">
+	<div class="panels">
 
-	<section id="pledge" class="panel">
-	
-		<% unless session[:pledged] %>
-	
-			<h2><span>Get involved</span> Take the Wild Thing Pledge</h2>
+		<section id="manifesto" class="panel">
+			<p class="goal"><span><%= "%04d" %  (@pledge_count.to_i) %></span> people have pledged</p>
+			<p class="pledge">I promise to spend as much of my <span class="tip" title="Not including time spent at work!">time</span> outdoors as I do looking at screens, and, by my advice and example, encourage others to do the same</p>
+			<p class="cta"><%= link_to "Read the Manifesto", manifesto_path %></p>
+		</section>
 
-			<%= render "pledges/form" %>			
+		<section id="pledge" class="panel">
+			<h2>Take the wild thing pledge</h2>
+			<%= render "pledges/form" %>
+		</section>
 	
-		<% else %>
+	</div>
 	
-			<p class="cta"><a href="https://twitter.com/intent/tweet?&amp;via=wearewildthing&amp;url=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me:">Tweet your Pledge</a></p>
-			<p class="cta"><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me">Share on Facebook</a></p>
-		
-		<% end %>
-	
-	</section>
-
-	<section id="why" class="panel">
-
-		<h2><span>Inspirations</span> Inspirations for the wild</h2>	
-	
-		<% unless @inspiration.nil? %>
-		<iframe src="http://player.vimeo.com/video/<%= @inspiration.vimeo_id %>" width="400" height="250" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-		<% end %>
-				
-	</section>
-</div>
+<% end %>

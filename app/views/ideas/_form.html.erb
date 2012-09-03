@@ -1,15 +1,14 @@
 <%= simple_form_for [@idea] do |f| %>
   
+	<p>How can we re-connect our kids with nature?</p>
 	<%= field_set_tag nil, :class => "auto" do %>
-		<%= f.input :name, :label => "Your name" %>
-		<%= f.input :title, :input_html => { :"data-placeholder" => "Your idea in under 90 characters" } %>
-		<%= f.input :idea, :as => :text, :label => "Full idea" %>
-		<p>We love conversation, so we're Tweeting ideas from @wearewildthing. If you'd like to be mentioned, pop your twitter handle below</p>
-		<%= f.input :twitter_handle, :label => "Your Twitter handle" %>
+		<%= f.input :name, :input_html => { :"data-placeholder" => "Your name" } %>
+		<%= f.input :title, :as => :text, :input_html => { :"data-placeholder" => "Your idea (in under 90 characters)" } %>
+		<%= f.input :idea, :as => :text, :input_html => { :"data-placeholder" => "More about your idea, supporting information etc." } %>
 	<% end %>
 
 	<%= field_set_tag do %>
-		<%= f.submit :value => "Share idea" %>
+		<%= f.submit :value => "Inspire us" %>
 	<% end %>
   
 <% end %>

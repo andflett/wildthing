@@ -1,5 +1,15 @@
-<% if @ideas.any? %>
-	<% @ideas.each do |idea| %>
-		<%= render "block", :idea => idea %>
+<h1>How can we re-connect with nature?</h1>
+
+<section class="user_ideas">
+	<% if @ideas.any? %>
+	<ul>
+		<% @ideas.each do |idea| %>
+			<li>
+				<p class="name">Idea from <em><%= idea.name %></em></p>
+				<p class="idea"><%= idea.title %></p>
+				<%= simple_format idea.idea %>
+			</li>	
+		<% end %>
+	</ul>
 	<% end %>
-<% end %>
+</section>

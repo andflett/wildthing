@@ -30,7 +30,7 @@
 		<% end %>
 			
 	</head>
-	<body class="<%= "section_#{params[:controller]} view_#{params[:action]}"%>">
+	<body class="<%= "section_#{params[:controller]} view_#{params[:action]} pledged_#{session[:pledged]}"%>">
 		
 		<header>
 			
@@ -41,29 +41,40 @@
 					<% if is_home? %>
 					
 						<h1 class="branding ir">Project Wild Thing<span></span></h1>
+						<p class="tagline">Re-connecting 1 million kids with nature</p>
+						
+						<%= render "pledges/introduction" %>
 						
 						<nav id="primary_navigation">
 							<ul>
-								<li><%= link_to "Pledge", "#pledge" %>
-								<li><%= link_to "Projects", "#projects" %></li>
-								<li><%= link_to "Your Ideas", "#ideas" %></li>
+								<li><%= link_to "Find a project", "#projects" %></li>
+								<li><%= link_to "Be Inspired", "#inspiration" %></li>
+								<li><%= link_to "Share Your Ideas", "#ideas" %></li>
 							</ul>
 						</nav>
-						
-						<%= render "pledges/introduction" %>
 					
 					<% else %>
 					
 						<p class="branding"><a href="<%= root_path %>" class="ir">Project Wild Thing <span></span></a></p>
+						<p class="tagline">Re-connecting 1 million kids with nature</p>
 						
 						<nav id="primary_navigation">
 							<ul>
-								<li><%= link_to "Pledge", "#{root_path}#pledge" %>
-								<li><%= link_to "Projects", projects_path %></li>
-								<li><%= link_to "Your Ideas", "#{root_path}#ideas" %></li>
+								<li><%= link_to "Find a project", projects_path, :class => ("active" if is_projects?) %></li>
+								<li><%= link_to "Be Inspired", film_path, :class => ("active" if is_film?) %></li>
+								<li><%= link_to "Share Your Ideas", "#{root_path}#ideas" %></li>
 							</ul>
 						</nav>
 						
+					<% end %>
+					
+					<% if session[:pledged] %>
+					
+						<div class="sharing">		
+							<p class="cta"><a href="https://twitter.com/intent/tweet?&amp;via=wearewildthing&amp;url=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me:">Tweet your Pledge</a></p>
+							<p class="cta"><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me">Share on Facebook</a></p>
+						</div>
+					
 					<% end %>
 						
 				</div>
@@ -74,13 +85,19 @@
 		
 		<div id="primary_content" role="main">
 			<div class="container">
-				<%= flash[:notice] %>
+				<% if flash[:notice] %>
+					<p class="notice"><%= flash[:notice] %></p>
+				<% end %>
 				<%= yield %>
 			</div>
 		</div>
 				
 		<footer>
-			<p class="container">A Wild Thing <%= link_to "founders", partners_path %> collaboration, Designed <a href="http://www.becausestudio.co.uk/">Because Studio</a>, Twittering at <a href="http://twitter.com/wearewildthing">@wearewildthing</a>, Privacy in our <%= link_to "policy", privacy_path %></p>
+			<div class="container">
+				<%= render "ideas/panel" if is_home? %>
+				<%= render "home/footnotes" if is_manifesto? %>
+				<p class="colophon">A Wild Thing <%= link_to "founders", partners_path %> collaboration, Designed <a href="http://www.becausestudio.co.uk/">Because Studio</a>, Twittering at <a href="http://twitter.com/wearewildthing">@wearewildthing</a>, Privacy in our <%= link_to "policy", privacy_path %></p>
+			</div>
 		</footer>
 			
 	</body>

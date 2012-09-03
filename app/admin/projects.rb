@@ -35,7 +35,7 @@ ActiveAdmin.register Project do
       f.input :url
       f.input :image
       f.input :description, :as => :text, :input_html => { :rows => 3 }
-      f.input :body, :as => :text, :input_html => { :rows => 6 }
+      f.input :body, :as => :text, :input_html => { :rows => 24 }
     end
     f.buttons
   end

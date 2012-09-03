@@ -5,7 +5,7 @@
   }
   
   form fieldset {
-    padding: 0 0 30px;
+    padding: 0 0 20px;
   }
 
 	legend {
@@ -32,10 +32,13 @@
 		letter-spacing: 1px;
   }
  
- /* =checkbox */
+ /* =boolean */
  
-  .checkbox label {
+  .boolean label {
     margin-bottom: 0.75em;
+		display: inline-block;
+		font-size: 13px;
+		padding-left: 10px;
   }
 
  /* =submit */
@@ -43,22 +46,28 @@
 	input[type="submit"] {
 		display: inline-block;
 		color: #3f4521;
-		line-height: 47px;
-		width: 273px;
-		font-size: 18px;
+		line-height: 67px;
+		width: 120px;
+		font-size: 15px;
 		font-family: 'ParisBlack';
-		background: url(<%= asset_path "buttons/wide.png" %>) no-repeat center center;
+		background: url(<%= asset_path "buttons/highlight_button.png" %>) no-repeat center center;
 		border: 0;
 		cursor: pointer;
+	}
+	
+	input[type="submit"]:hover {
+		color: #ffffff;
 	}
 
  /* =textarea */
 
   textarea { 
-    font-size: 1em; 
+    font-size: 13px;
+		font-family: courier; 
     padding: 5px; 
-    margin-bottom: 1em; 
+		margin-bottom: 15px;
     border: 1px solid #cccccc;
+		-webkit-font-smoothing: antialiased;
   }
 
 /* Tables */

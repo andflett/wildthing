@@ -12,6 +12,7 @@ Wildthing::Application.routes.draw do
 	resources :pledges, :only => [:create]
 	resources :partners, :only => [:index]
 	
+	match "pledge" => "pledges#new"
   match "manifesto" => "home#manifesto"
   match "privacy" => "home#privacy"
   match "the-nature-film" => "home#film", :as => "film"

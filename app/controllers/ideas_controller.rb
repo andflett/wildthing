@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
 	def create
 	  @idea = Idea.new(params[:idea])
     if @idea.save
-      flash[:notice] = "Thanks, we'll publish and twitterise soon"
+      flash[:notice] = "Thanks for adding to the conversation. We'll publish and Tweet your idea soon."
       redirect_to ideas_path
     else
       redirect_to index_path

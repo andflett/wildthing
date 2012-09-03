@@ -1,8 +1,10 @@
 <h1><%= @project.title %></h1>
 
 <% unless @project.image.url.nil? %>
-	<%= image_tag @project.image.thumbnail %>
+	<%= image_tag @project.image %>
 <% end %>
 
+<section class="full_panel">
 <%= markdown.render(@project.body).html_safe %>
-	
+</section>
+

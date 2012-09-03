@@ -36,7 +36,11 @@
 			overflow: visible;
 			padding: 0;
 			position: relative;
-			padding: 165px 0 30px;
+			padding: 165px 0 40px;
+		}
+		
+		.pledged_true header .container {
+			padding-bottom: 20px;
 		}
 		
 		header .branding {
@@ -57,8 +61,17 @@
 			background: url("branding/wild_thing_logo.gif") no-repeat;
 		}
 		
+		header .tagline {
+			font-family: ParisBlack;
+			text-align: center;
+			margin: -40px 0 50px 0;
+			padding: 0;
+			font-size: 18px;
+		}
+		
 		header nav {
-			padding-left: 30px;
+			padding-left: 10px;
+			position: relative;
 		}
 		
 		header nav ul {
@@ -68,7 +81,7 @@
 		}
 		
 		header nav ul li {
-			padding: 0 25px 0 0;
+			padding: 0 20px 0 0;
 			margin: 0;
 			display: inline-block;
 			font-size: 24px;
@@ -76,7 +89,7 @@
 		}
 		
 		header nav ul li:first-child {
-			padding-right: 40px;
+			padding-right: 28px;
 		}
 		
 		header nav ul li a {
@@ -86,14 +99,24 @@
 			display: block;
 		}
 		
+		header nav ul li a:hover,
+		header nav ul li a:active,
+		header nav ul li a:focus,
+		header nav ul li a.active {
+			color: #cad400;
+			text-decoration: none;
+		}
+		
 	/* =primary_content */
 	
 		#primary_content {
-			padding: 45px 0 400px;
+			padding: 35px 0 390px;
 			background-color: #ffffff;
 			background-image: url(<%= asset_path "layout/footer.gif" %>), url("layout/main.gif");
 			background-position: center bottom, top center;
 			background-repeat: no-repeat, repeat-x;
+			position: relative;
+			z-index: 10;
 		}
 		
 		#primary_content p {
@@ -106,11 +129,27 @@
 			color: #ffffff;
 			padding: 10px 0 10px;
 			text-transform: uppercase;
+			position: relative;
+			z-index: 20;
+			margin-top: -130px;
 		}
 		
-		footer p {
-			font-size: 12px;
-			-webkit-font-smoothing: antialiased; 
+		footer h2 {
+			width: 400px;
+			margin-left: 100px;
+			margin-bottom: 40px;
+			text-align: center;
+			color: #cad400;
+		}
+		
+		footer p, footer li { 
+			-webkit-font-smoothing: antialiased;
+		}
+		
+		footer p.colophon {
+			margin-top: 90px;
+			font-size: 12px; 
+			margin-bottom: 0;
 		}
 
 }

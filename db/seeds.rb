@@ -25,7 +25,7 @@ categories = Category.create([
 Project.delete_all
 projects = Project.create([
   {
-    title: 'Wild Time',
+    title: 'Wild Time App',
   	url: 'http://wildtime.projectwildthing.com/',
   	description: 'Time-based activities in the wild.',
   	category_id: @cat_wildthing.id
@@ -33,8 +33,8 @@ projects = Project.create([
   {
     title: 'Out and About Pack',
     body: 'This is the first stage of the OUT AND ABOUT project. It is a beautifully designed, two-sided card given to parents just as they leave a maternity ward with their new baby or at postnatal clinics in the first 6 weeks.  It explains the wide-ranging benefits to parents and children of time spent outdoors.
-    At Project Wild Thing, we are currently running a trial of the card in various Maternity Wards and postnatal clinics. You are free to download it [link] now.  Please share it with any parents of young children you know.
-    As the project develops, we will produce further booster packs. We will deliver these to parents at important developmental stages in a child\'s life. These will reinforce the message that the outdoors is great fun for kids, and important for their ongoing development. They will broaden in their scope to become tools for the child as well as the parent and relate to the Project Wild Thing online platform with great ideas for getting into nature. http://goodfornothing.s3.amazonaws.com/Wild_Thing_Out_and_About_Pack.pdf',
+    At Project Wild Thing, we are currently running a trial of the card in various Maternity Wards and postnatal clinics. You are free to download it below.  Please share it with any parents of young children you know.
+    As the project develops, we will produce further booster packs. We will deliver these to parents at important developmental stages in a child\'s life. These will reinforce the message that the outdoors is great fun for kids, and important for their ongoing development. They will broaden in their scope to become tools for the child as well as the parent and relate to the Project Wild Thing online platform with great ideas for getting into nature.  [Download and Print](http://goodfornothing.s3.amazonaws.com/Wild_Thing_Out_and_About_Pack.pdf)',
     description: 'Record the time you spend outdoors with your newborn',
     category_id: @cat_wildthing.id
   },
@@ -411,5 +411,17 @@ partners = Partner.create([
     name: 'Good for Nothing',
     url: 'http://www.goodfornothing.com',
     priority: 11
+  }
+])
+
+Inspiration.delete_all
+inspirations = Inspiration.create([
+  { 
+    title: 'Susan Greenfield',
+    vimeo_id: '48734019'
+  },
+  { 
+    title: 'The Nature Film',
+    vimeo_id: '44097760'
   }
 ])
