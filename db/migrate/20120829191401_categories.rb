@@ -4,7 +4,6 @@ class Categories < ActiveRecord::Migration
       t.string :title
       t.timestamps
     end
-    add_column :projects, :category_id, :integer
   end
 
   def down
