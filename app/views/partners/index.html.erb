@@ -1,7 +1,7 @@
 <h1>The Wild Thing Founding Partners</h1>
 
 <% if @partners.any? %>
-	<ul class="grid_list">
+	<ul class="grid">
 		<% @partners.each do |partner| %>
 			<% unless partner.image.nil? %>
 			<li><%= link_to (image_tag partner.image.grid, :alt => partner.name), partner.url %></li>
