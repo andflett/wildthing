@@ -15,7 +15,10 @@ class PledgesController < ApplicationController
       redirect_to projects_path
       
     else
-      render "home/index"
+      
+      flash[:notice] = "Sorry, we couldn't save your pledge, it looks like you've pledged before."
+      redirect_to root_path
+      
     end
     
 	end

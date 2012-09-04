@@ -1,9 +1,9 @@
 <li>
 	<h3>
-	<% if project.body.blank? %>
-		<%= link_to project.title.html_safe, project_path(project) %>
-	<% else %>
+	<% if project.body.blank? || project.body.nil? %>
 		<%= link_to project.title.html_safe, project.url %>
+	<% else %>
+		<%= link_to project.title.html_safe, project_path(project) %>
 	<% end %>
 	</h3>
 	<%= markdown.render(project.description).html_safe %>
