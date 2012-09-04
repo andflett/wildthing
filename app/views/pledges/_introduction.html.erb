@@ -1,18 +1,14 @@
-<% unless session[:pledged] %>
+<div class="panels">
 
-	<div class="panels">
+	<section id="manifesto" class="panel">
+		<p class="goal"><span><%= "%04d" %  (@pledge_count.to_i) %></span> people have pledged</p>
+		<p class="pledge">I promise to spend as much of my <span class="tip" title="Not including time spent at work!">time</span> outdoors as I do looking at screens, and, by my advice and example, encourage others to do the same</p>
+		<p class="cta"><%= link_to "Read the Manifesto", manifesto_path %></p>
+	</section>
 
-		<section id="manifesto" class="panel">
-			<p class="goal"><span><%= "%04d" %  (@pledge_count.to_i) %></span> people have pledged</p>
-			<p class="pledge">I promise to spend as much of my <span class="tip" title="Not including time spent at work!">time</span> outdoors as I do looking at screens, and, by my advice and example, encourage others to do the same</p>
-			<p class="cta"><%= link_to "Read the Manifesto", manifesto_path %></p>
-		</section>
+	<section id="pledge" class="panel">
+		<h2>Take the wild thing pledge</h2>
+		<%= render "pledges/form" %>
+	</section>
 
-		<section id="pledge" class="panel">
-			<h2>Take the wild thing pledge</h2>
-			<%= render "pledges/form" %>
-		</section>
-	
-	</div>
-	
-<% end %>
+</div>

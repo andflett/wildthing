@@ -43,7 +43,8 @@
 						<h1 class="branding ir">Project Wild Thing<span></span></h1>
 						<p class="tagline">Re-connecting 1 million kids with nature</p>
 						
-						<%= render "pledges/introduction" %>
+						<%= render "pledges/introduction" unless session[:pledged] %>
+						<%= render "pledges/pledged" if session[:pledged] %>
 						
 						<nav id="primary_navigation">
 							<ul>
@@ -57,7 +58,7 @@
 					
 						<p class="branding"><a href="<%= root_path %>" class="ir">Project Wild Thing <span></span></a></p>
 						<p class="tagline">Re-connecting 1 million kids with nature</p>
-						
+												
 						<nav id="primary_navigation">
 							<ul>
 								<li><%= link_to "Find a project", projects_path, :class => ("active" if is_projects?) %></li>
@@ -67,14 +68,14 @@
 						</nav>
 						
 					<% end %>
-					
-					<% if session[:pledged] %>
+						
+					<% if session[:pledged] && is_projects?	%>
 					
 						<div class="sharing">		
 							<p class="cta"><a href="https://twitter.com/intent/tweet?&amp;via=wearewildthing&amp;url=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me:">Tweet your Pledge</a></p>
 							<p class="cta"><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.projectwildthing.com&amp;text=I have pledged to spend as much time outdoors as I do looking at screens, take the pledge with me">Share on Facebook</a></p>
 						</div>
-					
+						
 					<% end %>
 						
 				</div>

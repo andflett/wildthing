@@ -1,3 +1,4 @@
+
 <% if @categories.any? %>
 
 	<ul class="categories">
@@ -5,6 +6,8 @@
 		<li><a href="#<%= category.slug %>"><%= category.title %></a></li>
 		<% end %>
 	</ul>
+	
+	<p style="text-align: center;">Projects to help get outdoors more with your kids</p>
 	
 	<% @categories.each do |category| %>
 		<section class="project_category">
