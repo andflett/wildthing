@@ -8,8 +8,9 @@ class PledgesController < ApplicationController
       
       session[:pledged] = true
       
-      if @pledge.subscribed? && Rails.env.production? 
-        Gibbon.new(ENV['mailchimp_api_key']).list_subscribe(:id => ENV['mailchimp_api_list'], :email_address => params[:email])
+      if @pledge.subscribed?
+        mc = Gibbon.new('932a6959829feb080dd18797db38d42d-us5')
+        puts mc.list_subscribe({:id => '7bbb79ac57', :email_address => @pledge.email})
       end
       
       redirect_to projects_path
