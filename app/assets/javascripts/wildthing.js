@@ -29,11 +29,19 @@ $(document).ready(function(){
 		$(el).find('.string label, .email label, .text label').hide();
 		
 		$(el).bind('submit',function(ev){
+			
 			$(el).find('.auto input[type="text"],.auto input[type="email"]').each(function(i,input) {
 				if($(input).val()==$(input).data('placeholder')) {
 					$(input).val('')
 				}
 			})
+			
+			$(el).find('.text textarea').each(function(i,input) {
+				if($(input).val()==$(input).data('placeholder')) {
+					$(input).val('')
+				}
+			})
+			
 		})
 		
 		

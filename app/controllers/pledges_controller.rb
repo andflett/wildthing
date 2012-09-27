@@ -8,10 +8,10 @@ class PledgesController < ApplicationController
       
       session[:pledged] = true
       
-      if @pledge.subscribed?
-        mc = Gibbon.new('932a6959829feb080dd18797db38d42d-us5')
-        puts mc.list_subscribe({:id => '7bbb79ac57', :email_address => @pledge.email})
-      end
+      #if @pledge.subscribed?
+      #  mc = Gibbon.new('932a6959829feb080dd18797db38d42d-us5')
+      #  puts mc.list_subscribe({:id => '7bbb79ac57', :email_address => @pledge.email, :double_optin => true})
+      #end
       
       redirect_to projects_path
       
