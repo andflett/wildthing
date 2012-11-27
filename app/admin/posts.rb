@@ -14,7 +14,7 @@ ActiveAdmin.register Post, :as => "Blog Post" do
       row :title
       row :abstract
       row :image do
-        image_tag(post.image.thumbnail) unless post.image.url.nil?
+        image_tag(post.image.inspiration) unless post.image.url.nil?
       end
       row :body do
         simple_format(post.body).html_safe

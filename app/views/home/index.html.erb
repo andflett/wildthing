@@ -54,9 +54,15 @@
 	</div>
 	
 	<ul class="grid grid_film">
+		
 		<% @inspirations.each do |inspiration| %>
 			<%= render :partial => "inspirations/block", :locals => { :inspiration => inspiration } %>
 		<% end %>
+		
+		<% if @post.present? %>
+			<%= render :partial => "posts/block", :locals => { :post => @post } %>
+		<% end %>
+		
 	</ul>
 
 	<p class="cta"><%= link_to "The Nature Film", film_path %></p>

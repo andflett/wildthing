@@ -1,6 +1,7 @@
-<% unless post.image.url.nil? %>
-	<%= image_tag post.image.thumbnail %>
-<% end %>
-<h2><%= link_to post.title, post_path(post) %></h2>
-<time><%= post.created_at.to_s(:article) %></time>
-<%= post.abstract %>
+<li class="post_block">
+	<% unless @post.image.url.nil? %>
+	<%= link_to (image_tag @post.image.inspiration), post_path(@post) %>
+	<% end %>
+	<h3><%= link_to @post.title, post_path(@post) %></h3>
+	<p><%= @post.abstract %></p>
+</li>

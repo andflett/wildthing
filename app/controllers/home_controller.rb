@@ -5,13 +5,15 @@ class HomeController < ApplicationController
     @wild_thing_projects = Category.find_by_title('Wild Thing').projects.limit(2)
     @projects = Project.featured
   
-    @inspirations = Inspiration.order('created_at DESC').limit(2)
+    @inspirations = Inspiration.order('created_at DESC').limit(1)
     
     @ideas = Idea.where('published = true').order('created_at DESC').limit(3)
     @idea = Idea.new
     
     @pledge_count = Pledge.count
     @pledge = Pledge.new
+
+		@post = Post.order('created_at DESC').first
     
   end
   

@@ -27,6 +27,24 @@
 		border-bottom: 1px dotted #ffffff;
 	}
 	
+/* =article */
+
+	article {
+		min-height: 300px;
+		padding-top: 30px;
+		width: 500px;
+		margin: 0 auto;
+	}
+
+	article h2 {
+		margin-bottom: 6px;
+	}
+	
+	article time {
+		margin-bottom: 25px;
+		color: #282828;
+	}
+	
 /* =footnotes */
 
 	.footnotes {
@@ -166,11 +184,32 @@
 	
 	.grid_film li {
 		width: 461px;
-		margin: 0 38px 0 0
+		margin: 0 36px 36px 0
+	}
+	
+	.grid_film li:nth-child(2n+2) {
+		margin-right: 0;
 	}
 	
 	.grid_film li:last-child {
 		margin-right: 0;
+	}
+	
+	.grid_film li.post_block img {
+		float: left;
+		margin-right: 20px;
+		width: 259px;
+	}
+	
+	.grid_film li.post_block h3 {
+		font-size: 18px;
+		text-align: left;
+		margin-bottom: 10px;
+	}
+	
+	.grid_film li.post_block p {
+		padding: 0;
+		text-align: left;
 	}
 	
 /*= pull */

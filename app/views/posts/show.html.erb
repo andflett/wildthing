@@ -1,8 +1,7 @@
 <% if @post %>
+	<article>
 	<h2><%= @post.title %></h2>
-	<% unless @post.image.url.nil? %>
-		<%= image_tag @post.image.panel %>
-	<% end %>
-	<%= @post.created_at %>
+	<time>Posted <%= @post.created_at.to_s(:article) %></time>
 	<%= markdown.render(@post.body).html_safe %>
+	</article>
 <% end %>
